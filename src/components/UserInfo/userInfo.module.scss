@@ -1,0 +1,45 @@
+.box{
+    display: flex;
+    align-items: center;
+    
+    &_text{
+        display: flex;
+        align-items: center;
+
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 10px;
+        border-right: 1px solid white;
+    }
+    &_circle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: blue;
+
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+    }
+    &_btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    &_icon{
+        transition: color 250ms ease-in-out;
+    }
+    &_icon:hover{
+        color: red;
+    }
+}

@@ -1,0 +1,43 @@
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(37, 34, 34, 0.801);
+}
+.mobileMenu{
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 220px;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f46ff4;
+
+    &_header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+
+        border-bottom: 1px solid grey;
+
+    }
+
+    & .close_btn{
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+
+        &_icon:hover,
+        &_icon:focus{
+            transform: scale(1.1);
+        }
+    }
+}

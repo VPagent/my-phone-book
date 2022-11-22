@@ -1,0 +1,21 @@
+.header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: dimgray;
+
+    &_wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    & .menu_btn{
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+    }
+    & .menu_btn:hover .icon{
+        color: red;
+    }
+    
+}
