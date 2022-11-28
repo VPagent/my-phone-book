@@ -1,0 +1,91 @@
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(50, 49, 49, 0.8);
+}
+.form{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+
+    width: 250px;
+    height: 100%;
+
+    padding-left: 20px;
+    padding-right: 10px;
+    
+    border-radius: 10px;
+    background-color: violet;
+
+    & .labelWrapper{
+        display: flex;
+        flex-direction: column;
+
+       
+        padding-top: 10px;
+        padding-bottom: 10px;
+        & .label{
+            position: relative;
+
+            transition: transform 250ms ease-in-out;
+
+            &:first-child{
+                margin-bottom: 10px;
+            }
+
+            &:hover{
+                transform: scale(1.05);
+            }
+            & .icon{
+                position: absolute;
+                top: 2px;
+                left: 4px;
+            }
+            
+        }
+        & .input{
+            padding-left: 25px;
+
+            outline: none;
+            border: none;
+            background-color: transparent;
+            border-bottom: 1px solid black;
+            
+           
+        }
+    }
+
+    & .controlsWrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        margin-left: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        & .btn{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: transform 250ms ease-in-out;
+            &:hover{
+                transform: scale(1.1);
+            }
+            &:hover .checkIcon{
+                fill: rgb(11, 245, 11);
+            }
+        }
+        & .checkIcon{
+            transition: box-shadow 250ms ease-in-out;
+            fill: greenyellow;
+            transition: fill 250ms ease-in-out;
+        }
+    }
+}

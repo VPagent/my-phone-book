@@ -1,4 +1,5 @@
 import  axios  from "axios";
+import { Item } from "../types/types";
 
 export const contactsApi = axios.create({
     baseURL: 'https://connections-api.herokuapp.com/',
@@ -17,6 +18,12 @@ export const postContacts = async (body: any) => {
     const response = await privateApi.post("contacts", body)
     return response.data
     
+}
+
+export const patchContacts = async (id:string, body:any) => {
+    const response = await privateApi.patch(`contacts/${id}`, body)
+    console.log(response.data)
+    return response.data
 }
 
 export const deleteContact = async (id: any) => {

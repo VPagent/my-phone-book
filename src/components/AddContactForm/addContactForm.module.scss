@@ -1,0 +1,92 @@
+
+
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 15px;
+
+    border-radius: 10px;
+    background-color: rgb(231, 228, 228);
+    box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.50);
+
+    @media screen and (min-width: 768px){
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    & .form_text{
+        margin-top: 0;
+        margin-bottom: 10px;
+        margin-right: auto;
+        
+        font-size: 20px;
+        font-weight: normal;
+        @media screen and (min-width: 768px){
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+        @media screen and (min-width: 1280px){
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        
+    }
+    & .label{
+        position: relative;
+        margin-bottom: 10px;
+        transition: transform 250ms ease-in-out;
+       
+        &:hover,
+        &:focus{
+            transform: scale(1.03);
+        }
+    }
+    & .input{
+        padding: 5px 25px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        &:hover,
+        &:focus{
+            border-bottom: 1px solid black;
+        }
+        @media screen and (min-width: 768px){
+            width: 370px;
+        }
+        // @media screen and (min-width: 1280px){
+        //     font-size: 30px;
+        // }
+    }
+    & .span{
+        position: absolute;
+        top: 6px;
+        left: 2px;
+    }
+    & .btn{
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 20px;
+        padding: 8px 15px;
+        border-radius: 6px;
+        border: none;
+        background-color: #3333ea;
+        color: white;
+    
+        transition: background-color 250ms ease-in-out;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            background-color: #2828c5;
+        }
+    }
+    
+}

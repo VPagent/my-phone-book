@@ -6,7 +6,7 @@ import { State } from '../types/types';
 const initialState:State = {
     token: null,
     user:null,
-    items: null,
+    items: [],
     filter: null,
 } 
 

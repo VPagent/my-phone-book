@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom"
 import { useGlobalState } from "../../globalState/store"
 import s from '../Menu/menu.module.scss'
-import { useMediaQuery } from 'react-responsive'
+// import { useMediaQuery } from 'react-responsive'
 
 
 
 const Menu:React.FC = () => {
 
     const [token] = useGlobalState("token")
-    const isDesktop = useMediaQuery({query: '(min-width: 1280px)'})
+    // const isDesktop = useMediaQuery({query: '(min-width: 1280px)'})
 
     return(
         <menu className={s.menu}>

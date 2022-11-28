@@ -45,20 +45,21 @@ const RegisterForm:React.FC = () => {
 
     return(
         <form action="" className={s.form} onSubmit={handleSubmit}>
+            <p className={s.title}>Please fill in all fields</p>
             <label className={s.label}>
-                Please enter your Name
-                <input type="text" name='name' placeholder='name' value={name} onChange={handleChange}/>
+               Name:
+                <input type="text" name='name' className={s.input} placeholder='name' value={name} onChange={handleChange}/>
             </label>
             <label className={s.label}>
-                Please enter your Email
-                <input type="email" name='email' placeholder='email' value={email} onChange={handleChange}/>
+                Email:
+                <input type="email" name='email' className={s.input} placeholder='email' value={email} onChange={handleChange}/>
             </label>
             <label className={s.label}>
-                Please enter your Password
-                <input type="password" name='password'placeholder='password' value={password} onChange={handleChange}/>
+                Password:
+                <input type="password" name='password' className={s.input} placeholder='password' value={password} onChange={handleChange}/>
             </label>
             <Link to="/login">I have account</Link>
-            <button type='submit'>LogIn</button>
+            <button className={s.btn} type='submit'>Register</button>
         </form>
     )
 }

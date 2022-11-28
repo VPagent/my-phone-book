@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useGlobalState } from '../../globalState/store'
-import { userLogIn } from '../../services/API'
+import tokenApi, { userLogIn } from '../../services/API'
 import s from '../LoginForm/loginForm.module.scss'
 
 
@@ -26,22 +26,24 @@ const LoginForm:React.FC = () => {
         .then(res => {
             setToken(res.token)
             setUser(res.user)
+            tokenApi.set(res.token)
             localStorage.setItem("token", JSON.stringify(res.token))
         })
         } catch(error:any){console.log(error.message)}
     }
     return(
         <form action="" className={s.form} onSubmit={handleSubmit}>
+            <p className={s.title}>Please enter your Email and Password</p>
             <label className={s.label}>
-                Please enter your Email
-                <input type="email" name='email' placeholder='email' value={email} onChange={handleChange}/>
+                Email:
+                <input type="email" className={s.input} name='email' placeholder='email' value={email} onChange={handleChange}/>
             </label>
             <label className={s.label}>
-                Please enter your Password
-                <input type="password" name='password'placeholder='password' value={password} onChange={handleChange}/>
+                Password:
+                <input type="password" className={s.input} name='password'placeholder='password' value={password} onChange={handleChange}/>
             </label>
-            <Link to="/register">I dont have account</Link>
-            <button type='submit'>LogIn</button>
+            <Link to="/register">I don't have account</Link>
+            <button className={s.btn} type='submit'>LogIn</button>
         </form>
     )
 }

@@ -1,0 +1,21 @@
+
+
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 100%;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+
+    @media screen and (min-width: 768px){
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+}
