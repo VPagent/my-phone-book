@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkmy_phone_book=self.webpackChunkmy_phone_book||[]).push([[853],{853:function(n,o,t){t.d(o,{IYd:function(){return r}});var e=t(983);function r(n){return(0,e.w_)({tag:"svg",attr:{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},child:[{tag:"path",attr:{d:"M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"}}]})(n)}}}]);
+//# sourceMappingURL=853.5fbe4768.chunk.js.map
