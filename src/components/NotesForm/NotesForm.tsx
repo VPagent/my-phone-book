@@ -2,6 +2,7 @@ import React, { FormEvent, useState } from 'react'
 import { Todo } from '../../types/types'
 import s from '../NotesForm/notesForm.module.scss'
 import { nanoid } from 'nanoid'
+import { toast } from 'react-toastify';
 
 type Props ={
     onFormSubmit: Function,
@@ -27,11 +28,16 @@ const NotesForm:React.FC<Props> = ({notes, onFormSubmit}) => {
         e.preventDefault()
         const inspect = notes.some(elem => elem.name === name)
         if(inspect){
-        //  toast.warning('there is already a note with the same name')
+         toast.warning('There is already a note with the same name')
          return
         }
         const obj = {name, text, done: false, id: nanoid(2)}
         onFormSubmit(obj)
+        reset()
+    }
+    const reset = () => {
+        setName('')
+        setText('')
     }
     return(
         <form className={s.form} onSubmit={handleSubmit}>

@@ -7,6 +7,7 @@ import {BsFillPersonFill, BsTelephoneFill} from 'react-icons/bs'
 import {FiEdit2} from 'react-icons/fi'
 import { useState } from 'react'
 import EditForm from '../EditForm'
+import { toast } from 'react-toastify'
 
 type Props = {
     item: Item
@@ -21,11 +22,13 @@ const ContactCard:React.FC<Props> = ({item}) => {
         if(items){
         deleteContact(id)
         setItems(prev => prev.filter(elem => elem.id !== id))
+        toast.success("contact has been deleted")
         }
     }
     const handleOpenForm = () => {
         setIsFormOpen(prev => !prev)
     }
+    
     return(
         <li id={id} className={s.card}>
             <div className={s.card_text_wrapper}>

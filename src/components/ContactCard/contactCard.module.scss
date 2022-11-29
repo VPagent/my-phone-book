@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
 
+    max-width: 320px;
     min-height: 60px;
 
     padding: 10px 15px;
@@ -13,8 +14,23 @@
     background-color: rgb(198, 197, 197);
     box-shadow: 0px 2px 4px 2px rgba(0,0,0,0.30);
     @media screen and (min-width: 768px){
-        width: 340px;
+        max-width: none;
+        width: calc((100% - 80px)/2);
+        
+        margin-right: 20px;
         margin-bottom: 20px;
+        &:nth-child(2n){
+            margin-right: 0;
+        }
+    }
+    @media screen and (min-width: 1280px){
+        width: calc((100% - 130px)/3);
+        &:nth-child(2n){
+            margin-right: 20px;
+        }
+        &:nth-child(3n){
+            margin-right: 0;
+        }
     }
 
     &_text_wrapper{

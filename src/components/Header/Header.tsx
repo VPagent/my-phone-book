@@ -29,7 +29,7 @@ const Header:React.FC = () => {
             {isDesktop && <Menu />}
             {token && isTablet && <UserInfo />}
             {!isDesktop && <button type='button' className={s.menu_btn} onClick={handleClickMenu}><SlMenu size={20} className={s.icon}/></button>}
-            {isOpen && <MobileMenu closeMenu={handleClickMenu}/>}
+            {isOpen && !isDesktop && <MobileMenu closeMenu={handleClickMenu}/>}
             </div>
             </Container>
         </header>

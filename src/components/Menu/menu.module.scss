@@ -1,6 +1,7 @@
 
 .menu{
-    
+    margin-top: 0;
+    margin-bottom: 0;
     padding: 0;
     @media screen and (min-width: 1280px){
         margin-left: auto;
@@ -18,7 +19,7 @@
     &_item{
         padding: 5px;
         margin-bottom: 5px;
-        border-bottom: 1px solid white;
+        border-bottom: 1px solid rgb(51, 50, 50);
         @media screen and (min-width:1280px){
             border-bottom: none;
             padding: 0;
@@ -26,17 +27,30 @@
             &:last-child{
                 margin-right: 0;
             }
+            &:hover .menu_link,
+            &:focus .menu_link{
+                color: white;
+            }
             
         }
     }
    
     &_link{
+        padding: 6px 12px;
         text-decoration: none;
-        color: black;
+        color: rgb(51, 50, 50);
         font-size: 20px;
+        font-weight: 500;
+        transition: color 250ms ease-in-out, border 250ms ease-in-out;
+        
+        &:global(.active){
+            color: white;
+            font-weight: 700;
+        }
 
         @media screen and (min-width:1280px){
             &:global(.active){
+                color: white;
                 border-bottom: 3px solid red;
             }
         }

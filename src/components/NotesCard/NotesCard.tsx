@@ -25,7 +25,7 @@ const NotesCard:React.FC<Props> =({elem, notes, onInputChange, onDelete}) => {
             <p className={s.text}>{text}</p>
             <div className={s.footerCard}>
                 <Switch checked={done} onChange={() => onInputChange(notes, name)} />
-                <button type="button" onClick={() => onDelete(notes, id)} className={s.button}><MdDelete color='grey' size={25}/></button>
+                <button type="button" onClick={() => onDelete(notes, id)} className={s.button}><MdDelete className={s.icon} size={25}/></button>
             </div>
         </li>
     )

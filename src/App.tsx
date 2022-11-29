@@ -3,6 +3,9 @@ import ClientRoutes from "./components/ClientRoutes";
 import Header from "./components/Header";
 import { useGlobalState } from "./globalState/store";
 import tokenApi, { getCurrentUser } from "./services/API";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -25,9 +28,11 @@ function App() {
   }, [token, user])
 
   return (
-    <div>
+    <div className="wrapper">
       <Header />
       <ClientRoutes />
+      <ToastContainer />
+      <Footer />
     </div>
   );
 }

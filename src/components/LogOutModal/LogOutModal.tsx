@@ -1,3 +1,4 @@
+import React, { ReactEventHandler, SyntheticEvent, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { useNavigate } from 'react-router-dom'
 import { useGlobalState } from '../../globalState/store'
@@ -17,6 +18,18 @@ const LogOutModal:React.FC<Props> = ({onClose}) => {
 
     const navigate = useNavigate()
 
+    useEffect(() => {
+        const handleKeyDown = (evt:KeyboardEvent) => {
+            if (evt.key === 'Escape') {
+                onClose()
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [onClose]);
+
     const handleLogOut = () => {
         localStorage.removeItem("token")
         tokenApi.unset()
@@ -25,9 +38,14 @@ const LogOutModal:React.FC<Props> = ({onClose}) => {
         navigate("/")
         onClose()
     }
+    const handleClickOnBackDrop = (e:SyntheticEvent<HTMLDivElement>) => {
+        if(e.target === e.currentTarget){
+            onClose()
+        }
+    }
 
     return createPortal(
-        <div className={s.backdrop}>
+        <>{token && user&& <div className={s.backdrop} onClick={handleClickOnBackDrop}>
             <div className={s.modal}>
                 <h2 className={s.title}>Are you sure?</h2>
                 <div className={s.controls}>
@@ -35,7 +53,7 @@ const LogOutModal:React.FC<Props> = ({onClose}) => {
                     <button type='button'className={s.btn} onClick={() => onClose()}>Cancel</button>
                </div>
             </div>
-        </div>, portal
+        </div>}</>, portal
     )
 }
 

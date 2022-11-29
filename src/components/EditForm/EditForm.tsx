@@ -6,10 +6,11 @@ import { getContacts, patchContacts } from '../../services/API'
 import { useGlobalState } from '../../globalState/store'
 import { MdPersonOutline } from 'react-icons/md'
 import { BsTelephone, BsFillCheckSquareFill} from 'react-icons/bs'
+import { toast } from 'react-toastify'
 
 type Props = {
     id: Item["id"],
-    onClose: Function
+    onClose: Function,
 }
 
 const EditForm:React.FC<Props> = ({id, onClose}) => {
@@ -29,13 +30,17 @@ const EditForm:React.FC<Props> = ({id, onClose}) => {
     }
     const handleSubmit = (e:React.FormEvent) => {
         e.preventDefault()
+        if(!name && !tel){
+            return toast.warning("Failed, all fields must be filled")
+        }
         const obj = {"name": name, "number": tel}
         patchContacts(id, obj)
         getContacts().then(res => setItems(res))
+        toast.success("Contact has been updated")
         onClose()
     }
 
-    return(
+    return items && (
         <>
         <div className={s.overlay} onClick={() => onClose()}></div>
         <form className={s.form} onSubmit={handleSubmit}>

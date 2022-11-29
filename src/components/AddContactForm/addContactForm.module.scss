@@ -17,6 +17,7 @@
         width: 500px;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 50px;
     }
 
     & .form_text{
@@ -25,7 +26,7 @@
         margin-right: auto;
         
         font-size: 20px;
-        font-weight: normal;
+        font-weight: bold;
         @media screen and (min-width: 768px){
             font-size: 25px;
             margin-bottom: 20px;

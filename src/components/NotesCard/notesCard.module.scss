@@ -47,8 +47,18 @@
         align-items: center;
     }
 
+    & .icon{
+        color: grey;
+        transition: transform 250ms ease-in-out, color 250ms ease-in-out;
+    }
     & .button{
         border: none;
         background-color: transparent;
+
+        &:hover .icon,
+        &:focus .icon{
+            color: black;
+            transform: scale(1.1);
+        }
     }
 }

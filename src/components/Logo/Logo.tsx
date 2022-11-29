@@ -6,7 +6,7 @@ const Logo:React.FC = () => {
 
     return(
         <p className={s.wrapper}>
-            <FaPhoneSquareAlt />
+            <FaPhoneSquareAlt size={30} className={s.icon}/>
             <span className={s.text}>
                 PhoneBook
             </span>
