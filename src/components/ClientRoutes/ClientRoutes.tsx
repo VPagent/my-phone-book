@@ -1,16 +1,20 @@
 import { Route, Routes } from "react-router-dom"
-import ContactsPage from "../../pages/ContactsPage"
-import HomePage from "../../pages/HomePage"
-import LoginPage from "../../pages/LoginPage"
-import NotesPage from "../../pages/NotesPage"
-import RegisterPage from "../../pages/RegisterPage"
+import { lazy, Suspense } from "react"
 import PablickRoute from "./PablickRoute"
 import PrivateRoute from "./PrivateRoute"
+import Loader from "../Loader"
+const HomePage = lazy(() => import('../../pages/HomePage'))
+const LoginPage = lazy(() => import('../../pages/LoginPage'))
+const RegisterPage = lazy(() => import('../../pages/RegisterPage'))
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'))
+const NotesPage = lazy(() => import('../../pages/NotesPage'))
+
 
 
 const ClientRoutes:React.FC = () => {
 
     return(
+        <Suspense fallback={<Loader />}>
         <Routes>
             <Route path ="/" element={<HomePage />}/>
             <Route path="/" element={<PrivateRoute />}>
@@ -22,6 +26,7 @@ const ClientRoutes:React.FC = () => {
                 <Route path="/notes" element={<NotesPage />}/>
             </Route>
         </Routes>
+        </Suspense>
     )
 }
 

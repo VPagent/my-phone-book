@@ -6,10 +6,10 @@ import s from '../UkrFlag/ukrFlag.module.scss'
 const UkrFlag:React.FC = () => {
 
     return(
-        <div className={s.box}>
-            <div className={s.box_header}></div>
-            <div className={s.box_footer}></div>
-        </div>
+        <span className={s.box}>
+            <span className={s.box_header}></span>
+            <span className={s.box_footer}></span>
+        </span>
     )
 }
 

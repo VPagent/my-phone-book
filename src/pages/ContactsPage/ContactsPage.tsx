@@ -19,7 +19,6 @@ const ContactsPage:React.FC = () => {
         // eslint-disable-next-line
     }, [])
 
-    console.log(items)
     return(
         <section>
             <Container>
@@ -27,7 +26,6 @@ const ContactsPage:React.FC = () => {
                 <p className={s.text}>On this page you can recreate your phone book, as well as edit contacts, if there is a change in the phone number or contact name</p> 
                 <AddContactForm />
                 <ContactsList />
-
             </Container>
         </section>
        
